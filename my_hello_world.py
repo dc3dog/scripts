@@ -41,15 +41,6 @@ print("Your last name has " + str(last_name_length) + " letters")
 age = input("\nand " + first_name.capitalize() + " how old are you? ")
 print()
 
-
-"""
-wants_photo = input("Do you want a photo taken? Y or N. ").upper()
-    if wants_photo == "Y":
-    # if wants_photo == "Y" or wants_photo == "y" or wants_photo == "Yes" or wants_photo == "yes":
-        bill += 3
-"""
-
-
 print (first_name.capitalize(), last_name.capitalize(), 'is' ,int(age), "years old.")
 print (f"your initials are, " + first_name_initial.capitalize(), last_name_initial.capitalize())
 #print(f'Howdy, ' + first_name_initial,last_name_initial)
@@ -108,4 +99,5 @@ print(len("0123456789"))
  # Print our timer results
 elapsed_time = default_timer() - start_time
 # print(f'The operation took {elapsed_time:.2} seconds')
+
 print(f'The operation took {elapsed_time:.4} seconds')
