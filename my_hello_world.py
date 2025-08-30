@@ -1,4 +1,5 @@
 import helper
+import re
 from datetime import datetime
 from helper import *
 
@@ -52,6 +53,16 @@ print()
 print("Is", city + " " + pet_name, "a cool name for a band?")
 print("I agree!")
 
+phoneNumRegex = re.compile(r"\d\d\d-\d\d\d-\d\d\d\d")
+phone = "an example phone number is 123-456-7890."
+result = phoneNumRegex.search(phone)
+
+if result:
+    print("\nWarning! a phone number was found!")
+    print("The area code is:", result.group()[0:3])
+    print("The exchange is:", result.group()[4:7])
+    print("The complete phone number is:", result.group())
+
 """
 \n creates a new line before printing 'The current working directory is:'
 \n creates a new line before printing the current working directory
@@ -101,3 +112,4 @@ elapsed_time = default_timer() - start_time
 # print(f'The operation took {elapsed_time:.2} seconds')
 
 print(f'The operation took {elapsed_time:.4} seconds')
+
