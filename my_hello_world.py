@@ -1,5 +1,6 @@
 import helper
 import re
+import pyinputplus as pyip
 from datetime import datetime
 from helper import *
 
@@ -24,6 +25,8 @@ print()
 
 first_name = input ("Please enter your first name: ")
 last_name = input ("\nPlease enter your last name: ")
+# input validation txt@some.domain
+email_address = pyip.inputEmail("\nEnter your email address:")
 city = input("\nWhat city did you grow up in? ")
 pet_name = input("\nEnter the name of an animal or pet? ")
 
@@ -38,8 +41,8 @@ last_name_initial = get_initial(last_name)
 last_name_length = len(last_name)
 print("Your last name has " + str(last_name_length) + " letters")
 
-
-age = input("\nand " + first_name.capitalize() + " how old are you? ")
+# use input validation. input must be a number, and must be greater than 0
+age = pyip.inputInt("\nand " + first_name.capitalize() + " how old are you? ", min=1)
 print()
 
 print (first_name.capitalize(), last_name.capitalize(), 'is' ,int(age), "years old.")
@@ -51,6 +54,9 @@ print("and your Operating System is " + os_version)
 print()
 
 print("Is", city + " " + pet_name, "a cool name for a band?")
+# choose from a lettered list
+yes_no = pyip.inputMenu(["Yes", "No"], lettered=True, numbered=False)
+print("You chose",yes_no)
 print("I agree!")
 
 phoneNumRegex = re.compile(r"\d\d\d-\d\d\d-\d\d\d\d")
@@ -112,4 +118,5 @@ elapsed_time = default_timer() - start_time
 # print(f'The operation took {elapsed_time:.2} seconds')
 
 print(f'The operation took {elapsed_time:.4} seconds')
+
 
